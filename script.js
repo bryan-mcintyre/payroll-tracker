@@ -4,25 +4,23 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
-  alert(`Would you like to add an employee to the payroll tracker?`)
-  const firstName = (prompt(`Employee First Name:`))
-  console.log(`${firstName}`)
-  const lastName = (prompt(`Employee Last Name:`))
-  console.log(`${lastName}`)
-  const salary = (prompt(`Employee Salary:`))
-  console.log(`Salary: ${salary}`)
-  // console.log(`Full Name: ${firstName} ${lastName} Salary: ${salary}`)
+   const employeeInfoArray = []
 
-  const employee = {
-    firstName: firstName,
-    lastName: lastName,
-    salary: salary,
-  }
-  console.log(employee)
-  console.log(employee.firstName)
-  return
+  let addEmployee = true
+  while (addEmployee) {
+    const firstName = window.prompt("Enter Employee First Name:")
+    const lastName = window.prompt("Enter Employee Last Name:")
+    const salary = window.prompt("Enter Employee Salary:")
+    const employeeInfo = {
+      firstName: firstName,
+      lastName: lastName,
+      salary: salary,
+    }
+    employeeInfoArray.push (employeeInfo)
+    addEmployee = window.confirm("Add another employee?")
+  } 
+return employeeInfoArray
 }
-
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
